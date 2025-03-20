@@ -629,7 +629,7 @@ function Parser(simpleGetPut,useAudio)
 							tempCode += "stacka.trirot2();";
 							break;
 						case 85:
-							tempCode += "stacka.push(mouse);"
+							tempCode += "stacka.push(getMouse());"
 							break;
 						default:
 							break;
@@ -750,6 +750,7 @@ function Parser(simpleGetPut,useAudio)
 						case 129: // direct store
 							tempCode += "me.mem["+cmd[1]+"]=stacka.pop();";
 							break;
+							
 					}
 					break;
 				case 2: // imm
