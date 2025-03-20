@@ -803,7 +803,7 @@ function Parser(simpleGetPut,useAudio)
 	}
 	if(typeof webkitAudioContext !== 'undefined')
 	{
-		this.audioCtx = new webkitAudioContext();
+		this.audioCtx = new AudioContext();
 		this.audioSR = this.audioCtx.sampleRate/60;
 		this.useChromeAudio = true;
 		this.buffer = new Float32Array(512);
