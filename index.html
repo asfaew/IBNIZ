@@ -628,6 +628,9 @@ function Parser(simpleGetPut,useAudio)
 						case 128: // Double trirot
 							tempCode += "stacka.trirot2();";
 							break;
+						case 85:
+							tempCode += "stacka.push(mouse);"
+							break;
 						default:
 							break;
 					}
@@ -885,6 +888,13 @@ function Parser(simpleGetPut,useAudio)
 	this.delayAudio = function(a)
 	{
 		if(this.useFFAudio) for(var b=0; b<a; b++) this.audioOut.mozWriteAudio(this.buffer);
+	}
+	this.getMouse = function() {
+		return this.mouse
+	}
+	this.mouse = 0
+	onmousemove = function(event) {
+		this.mouse = (event.clientX&0xff00ffff)/(event.clientY&0xff00ffff)
 	}
 }
 var p = new Parser(false,false);
