@@ -493,6 +493,10 @@ function Parser(simpleGetPut,useAudio)
 					switch(cmd[1])
 					{
 						// Math!
+							case 85:
+							tempCode += "stacka.push(getMouse());"
+							break;
+						
 						case 43:
 							tempCode += "stacka.push((stacka.pop()+stacka.pop())|0);";
 							break;
